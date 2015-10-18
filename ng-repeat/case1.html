@@ -1,0 +1,32 @@
+<html ng-app>
+<head>
+    <title>This is page title</title>
+
+</head>
+<body>
+<div ng-controller="StudentListController">
+    <ul>
+        <li ng-repeat="student in students">
+            <a ng-href="/student/view/{{student.id}}">{{student.name}}</a>
+        </li>
+    </ul>
+    <button ng-click="insertTom()">Insert Tom</button>
+</div>
+<script>
+    var students = [
+        {name:'Mary Contrary',id:'1'},
+        {name:'Jack Sprat',id:'2'},
+        {name:'Jill Hill',id:'3'}
+    ];
+
+    function StudentListController($scope){
+        $scope.students = students;
+
+        $scope.insertTom = function(){
+            $scope.students.splice(1,0,{name:'Tom Thumb',id:'4'});
+        }
+    }
+</script>
+<script src="http://libs.useso.com/js/angular.js/1.2.16/angular.min.js"></script>
+</body>
+</html>

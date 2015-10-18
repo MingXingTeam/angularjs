@@ -1,0 +1,26 @@
+<html ng-app>
+<head>
+    <title>This is page title</title>
+
+</head>
+<body>
+<div ng-controller="ParentController">
+    {{firstName}} {{lastName}} and {{cremen}} crewmen
+    <div ng-controller="ChildController">
+        {{firstName}} {{lastName}} and {{cremen}} crewmen
+    </div>
+</div>
+<script>
+    function ParentController($scope){
+        $scope.firstName = "Tom";
+        $scope.lastName = "Mao";
+        $scope.cremen = 30;
+    }
+    function ChildController($scope){
+        $scope.lastName = 'Columbus';
+        $scope.cremen = $scope.cremen + 56;//$scope.cremen will be 86
+    }
+</script>
+<script src="http://libs.useso.com/js/angular.js/1.2.16/angular.min.js"></script>
+</body>
+</html>

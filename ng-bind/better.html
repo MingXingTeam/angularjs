@@ -1,0 +1,21 @@
+<html ng-app = "myApp">
+<head>
+    <title>This is page title</title>
+
+</head>
+<body>
+    <div ng-controller="TestController">
+        {{someText.message}}
+    </div>
+    <script src="http://libs.useso.com/js/angular.js/1.2.16/angular.min.js"></script>
+    <script>
+        var myAppModule = angular.module('myApp',[]);
+        myAppModule.controller('TestController',function($scope){
+            var someText = {};
+            someText.message = 'Up up up!!';
+            $scope.someText = someText;
+
+        });
+    </script>
+</body>
+</html>

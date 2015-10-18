@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.useso.com/js/angular.js/1.2.16/angular.min.js"></script>
+</head>
+<body>
+<script>
+    function HelloController($scope) {
+        $scope.greeting = { text: 'Hello' };
+    }
+</script>
+<div ng-controller="HelloController">
+    <input type="text" ng-model="greeting.text"/>
+    <p>{{greeting.text}}, World</p>
+</div>
+</body>
+</html>
